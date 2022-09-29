@@ -1,0 +1,12 @@
+<div class="d-flex">
+  <button (click)="placePawns()"> Place </button>
+  <input type="text" name="text-field" [(ngModel)]="initialPosition" > <br>
+  <button [disabled]="!isPlaced || !initialPosition.length" (click)="move()"> Move </button> <br>
+  <button [disabled]="!isPlaced || !initialPosition.length" (click)="checkPawnDirection('left')"> Left </button> <br>
+  <button [disabled]="!isPlaced || !initialPosition.length" (click)="checkPawnDirection('right')"> RIght </button> <br>
+  <button (click)="showResult()"> Output </button> <br>
+  <button (click)="clearBoard()">Clear</button>
+    <p *ngIf="isShowResult"> Output is {{selectedElem | json}} </p>
+</div>
+
+
